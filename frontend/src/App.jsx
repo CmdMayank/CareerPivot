@@ -5,12 +5,14 @@ import HowItWorks from "./components/HowItWorks";
 import ReportPreview from "./components/ReportPreview";
 import RoadmapSection from "./components/RoadmapSection";
 import Footer from "./components/Footer";
+import ResumeUpload from "./components/ResumeUpload";
 
 function App() {
   return (
     <>
       <Navbar />
       <Hero />
+      <ResumeUpload />
       <ProblemCards />
       <HowItWorks />
       <ReportPreview />
