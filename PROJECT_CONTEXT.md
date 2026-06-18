@@ -153,3 +153,15 @@ https://github.com/CmdMayank/CareerPivot
 * Keep commits small and meaningful
 * Ship working versions quickly
 * Prioritize portfolio-worthy functionality over visual perfection
+## Current Milestone
+
+Build the first end-to-end workflow:
+
+User selects a PDF resume → Frontend sends the file to FastAPI → Backend receives the file → Extract text from the PDF → Display extracted content on the frontend.
+
+Success criteria:
+
+* User can upload a PDF
+* Backend receives the file successfully
+* Extracted text is returned to React
+* User sees the parsed resume content
