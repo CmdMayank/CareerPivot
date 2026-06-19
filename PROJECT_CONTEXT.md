@@ -120,6 +120,12 @@ CareerPivot/
 ```
 
 ---
+### Completed
+* [x] Resume Upload Button Functionality
+* [x] PDF File Picker
+* [x] Frontend ↔ Backend Connection
+* [x] FastAPI Setup
+* [x] CORS Configuration
 
 ## 🚧 Current Milestone
 
