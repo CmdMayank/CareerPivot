@@ -1,24 +1,28 @@
 # Career Pivot 🚀
 
-> Stop guessing your career path. Start building it.
+> **Stop guessing your career path. Start building it.**
 
 Career Pivot helps students understand **how close they are to their dream role** and provides a personalized roadmap to bridge the gap.
 
-Instead of learning random skills, building projects blindly, or endlessly watching tutorials, students can upload their resume, select a target role, and receive actionable insights on what to improve.
+Instead of learning random skills, building projects blindly, or endlessly consuming tutorials, students can upload their resume, choose a target role, and receive actionable insights on what to improve next.
 
 ---
 
-## ✨ The Problem
+## ✨ Why Career Pivot?
 
-Most students face the same challenges:
+Students often struggle to answer a simple question:
+
+**"What should I learn next to achieve my dream role?"**
+
+Career Pivot transforms career uncertainty into a structured, data-driven action plan.
+
+### Common Challenges
 
 * ❓ Unsure which skills actually matter for their target role
 * 📚 Learning without a clear direction
-* 📄 Resumes that don't effectively showcase their abilities
-* 🛠️ Projects that don't align with industry expectations
-* 🎯 No visibility into their current career readiness
-
-Career Pivot transforms uncertainty into a clear action plan.
+* 📄 Resumes that fail to communicate job readiness
+* 🛠️ Building projects that don't align with industry expectations
+* 🎯 No visibility into current career readiness
 
 ---
 
@@ -38,25 +42,26 @@ Generate Personalized Roadmap
 
 ---
 
-## 🎯 MVP Features
+## 🎯 MVP Roadmap
 
-### Phase 1 — Foundation
+### Phase 1 — Foundation (In Progress)
 
 * [x] Landing Page
 * [x] Resume Upload UI
 * [x] FastAPI Backend Setup
 * [x] Frontend ↔ Backend Communication
+* [x] CORS Configuration
 * [ ] PDF Resume Parsing
 * [ ] Resume Text Extraction
-* [ ] Dashboard
+* [ ] Basic Dashboard
 
 ### Phase 2 — Career Intelligence
 
 * [ ] Target Role Selection
 * [ ] Match Score Generation
 * [ ] Skill Gap Analysis
-* [ ] Resume Suggestions
-* [ ] Personalized Roadmap
+* [ ] Resume Improvement Suggestions
+* [ ] Personalized Career Roadmap
 
 ### Phase 3 — AI Enhancement
 
@@ -82,7 +87,7 @@ Generate Personalized Roadmap
 
 ### AI
 
-* Groq API
+* Groq API *(planned)*
 
 ### Deployment
 
@@ -108,7 +113,8 @@ CareerPivot/
 │   │   │   ├── ResumeUpload.jsx
 │   │   │   └── Footer.jsx
 │   │   ├── App.jsx
-│   │   └── main.jsx
+│   │   ├── main.jsx
+│   │   └── index.css
 │   │
 │   └── package.json
 │
@@ -120,16 +126,25 @@ CareerPivot/
 ```
 
 ---
-### Completed
-* [x] Resume Upload Button Functionality
+
+## ✅ Current Progress
+
+* [x] GitHub Repository Created
+* [x] React + Vite Setup
+* [x] Tailwind CSS v4 Setup
+* [x] Component Architecture
+* [x] Landing Page (V1)
+* [x] Resume Upload UI
 * [x] PDF File Picker
-* [x] Frontend ↔ Backend Connection
 * [x] FastAPI Setup
+* [x] Frontend ↔ Backend Connection
 * [x] CORS Configuration
+
+---
 
 ## 🚧 Current Milestone
 
-Building the first complete workflow:
+Building the first end-to-end workflow:
 
 ```text
 Select Resume
@@ -143,15 +158,13 @@ Extract Resume Text
 Display Results
 ```
 
-No AI yet.
-
-The current focus is building a reliable product pipeline before introducing AI features.
+**Current focus:** Build a reliable product pipeline before introducing AI features.
 
 ---
 
 ## 🧠 Development Philosophy
 
-* Build real features before polishing UI endlessly
+* Build real features before polishing the UI endlessly
 * Learn by building products, not tutorials
 * Keep commits small and meaningful
 * Ship working versions quickly
@@ -159,37 +172,38 @@ The current focus is building a reliable product pipeline before introducing AI 
 
 ---
 
-## 🗺️ Roadmap
+## 🗺️ Product Roadmap
 
-* [ ] Resume parsing engine
-* [ ] Role recommendation system
-* [ ] Skill gap analysis
-* [ ] AI-generated career roadmap
-* [ ] Exportable reports
+* [ ] Resume Parsing Engine
+* [ ] Target Role Recommendation System
+* [ ] Skill Gap Analysis
+* [ ] AI-Generated Career Roadmap
+* [ ] Exportable Reports
 * [ ] Authentication
-* [ ] User dashboard
+* [ ] User Dashboard
 * [ ] Deployment
 
 ---
 
 ## ⚙️ Local Setup
 
-### Clone the repository
+### Clone the Repository
 
 ```bash
 git clone https://github.com/CmdMayank/CareerPivot.git
 cd CareerPivot
 ```
 
-### Frontend
+### Frontend Setup
 
 ```bash
 cd frontend
+
 npm install
 npm run dev
 ```
 
-### Backend
+### Backend Setup
 
 ```bash
 cd backend
@@ -197,7 +211,7 @@ cd backend
 python3 -m venv venv
 source venv/bin/activate
 
-pip install fastapi uvicorn
+pip install fastapi uvicorn python-multipart
 
 uvicorn main:app --reload
 ```
@@ -208,21 +222,21 @@ uvicorn main:app --reload
 
 Suggestions, feedback, and ideas are always welcome.
 
-If you'd like to contribute:
+To contribute:
 
 1. Fork the repository
 2. Create a feature branch
-3. Make your changes
-4. Submit a pull request
+3. Commit your changes
+4. Open a pull request
 
 ---
 
 ## ⭐ Support
 
-If you found this project interesting, consider starring the repository.
+If you find this project interesting, consider giving it a star.
 
-It helps motivate future development and lets others discover Career Pivot.
+Your support motivates future development and helps others discover Career Pivot.
 
 ---
 
-Built with ❤️ by Mayank Sharma.
+Built with ❤️ by **Mayank Sharma**
