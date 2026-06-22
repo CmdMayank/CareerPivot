@@ -9,18 +9,26 @@ function ResumeUpload() {
     setMessage("");
   };
 
-  const testBackend = async () => {
-    try {
-      const response = await fetch("http://127.0.0.1:8000/test");
+  const uploadResume = async () => {
+  if (!file) return;
 
-      const data = await response.json();
+  const formData = new FormData();
+  formData.append("file", file);
 
-      setMessage(data.status);
-    } catch (error) {
-      console.error("Error connecting to backend:", error);
-      setMessage("Failed to connect to backend");
-    }
-  };
+  try {
+    const response = await fetch("http://127.0.0.1:8000/upload", {
+      method: "POST",
+      body: formData,
+    });
+
+    const data = await response.json();
+
+    setMessage(`Uploaded: ${data.filename}`);
+  } catch (error) {
+    console.error(error);
+    setMessage("Upload failed");
+  }
+};
 
   return (
     <section className="mx-auto max-w-3xl px-8 py-20">
@@ -43,12 +51,12 @@ function ResumeUpload() {
             </p>
 
             <button
-              type="button"
-              onClick={testBackend}
-              className="rounded-xl bg-black px-6 py-3 text-white transition hover:bg-gray-800"
+             type="button"
+             onClick={uploadResume}
+             className="rounded-xl bg-black px-6 py-3 text-white transition hover:bg-gray-800"
             >
-              Test Backend
-            </button>
+           Upload Resume
+           </button>
 
             {message && (
               <p className="mt-4 font-medium text-green-600">
