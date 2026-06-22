@@ -1,5 +1,6 @@
 from fastapi import FastAPI, UploadFile, File
 from fastapi.middleware.cors import CORSMiddleware
+from PyPDF2 import PdfReader
 
 app = FastAPI()
 
@@ -25,6 +26,17 @@ def test():
 
 @app.post("/upload")
 async def upload_resume(file: UploadFile = File(...)):
+    reader = PdfReader(file.file)
+
+    extracted_text = ""
+
+    for page in reader.pages:
+        text = page.extract_text()
+
+        if text:
+            extracted_text += text
+
     return {
-        "filename": file.filename
+        "filename": file.filename,
+        "text": extracted_text[:1000]
     }

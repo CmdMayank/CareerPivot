@@ -23,7 +23,7 @@ function ResumeUpload() {
 
     const data = await response.json();
 
-    setMessage(`Uploaded: ${data.filename}`);
+    setMessage(data.text);
   } catch (error) {
     console.error(error);
     setMessage("Upload failed");
@@ -31,43 +31,50 @@ function ResumeUpload() {
 };
 
   return (
-    <section className="mx-auto max-w-3xl px-8 py-20">
-      <div className="rounded-3xl border border-gray-200 bg-white p-10 shadow-sm">
-        <h2 className="mb-8 text-4xl font-bold">
-          Upload Your Resume
-        </h2>
+  <section className="mx-auto max-w-3xl px-8 py-20">
+    <div className="rounded-3xl border border-gray-200 bg-white p-10 shadow-sm">
 
-        <input
-          type="file"
-          accept=".pdf"
-          onChange={handleFileChange}
-          className="mb-6"
-        />
+      <h2 className="mb-8 text-4xl font-bold">
+        Upload Your Resume
+      </h2>
 
-        {file && (
-          <div className="mt-6">
-            <p className="mb-4 text-lg">
-              Selected File: {file.name}
-            </p>
+      <input
+        type="file"
+        accept=".pdf"
+        onChange={handleFileChange}
+      />
 
-            <button
-             type="button"
-             onClick={uploadResume}
-             className="rounded-xl bg-black px-6 py-3 text-white transition hover:bg-gray-800"
-            >
-           Upload Resume
-           </button>
+      {file && (
+        <div className="mt-6">
+          <p className="mb-4 text-lg">
+            Selected File: {file.name}
+          </p>
 
-            {message && (
-              <p className="mt-4 font-medium text-green-600">
+          <button
+            type="button"
+            onClick={uploadResume}
+            className="rounded-xl bg-black px-6 py-3 text-white"
+          >
+            Upload Resume
+          </button>
+
+          {message && (
+            <div className="mt-6 rounded-xl bg-gray-100 p-4">
+              <h3 className="mb-2 font-semibold">
+                Extracted Text:
+              </h3>
+
+              <p className="whitespace-pre-wrap text-sm text-gray-700">
                 {message}
               </p>
-            )}
-          </div>
-        )}
-      </div>
-    </section>
-  );
+            </div>
+          )}
+        </div>
+      )}
+
+    </div>
+  </section>
+);
 }
 
 export default ResumeUpload;

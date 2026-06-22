@@ -139,7 +139,7 @@ CareerPivot/
 * [x] FastAPI Setup
 * [x] Frontend ↔ Backend Connection
 * [x] CORS Configuration
-- [x] End-to-End File Upload Workflow
+
 
 ---
 
