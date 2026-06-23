@@ -2,11 +2,11 @@ import { useState } from "react";
 
 function ResumeUpload() {
   const [file, setFile] = useState(null);
-  const [message, setMessage] = useState("");
+  const [resumeData, setResumeData] = useState(null);
 
   const handleFileChange = (event) => {
     setFile(event.target.files[0]);
-    setMessage("");
+    setResumeData(null);
   };
 
   const uploadResume = async () => {
@@ -23,10 +23,10 @@ function ResumeUpload() {
 
     const data = await response.json();
 
-    setMessage(data.text);
+    setResumeData(data);
   } catch (error) {
     console.error(error);
-    setMessage("Upload failed");
+    setResumeData({ text: "Upload failed" });
   }
 };
 
@@ -58,17 +58,48 @@ function ResumeUpload() {
             Upload Resume
           </button>
 
-          {message && (
-            <div className="mt-6 rounded-xl bg-gray-100 p-4">
-              <h3 className="mb-2 font-semibold">
-                Extracted Text:
-              </h3>
+          {resumeData && (
+          <div className="mt-6">
 
-              <p className="whitespace-pre-wrap text-sm text-gray-700">
-                {message}
-              </p>
-            </div>
-          )}
+          <div className="mb-6 rounded-xl bg-purple-50 p-4">
+          <h3 className="mb-3 text-lg font-bold">
+          Resume Statistics
+         </h3>
+
+        <p>📄 Pages: {resumeData.pages}</p>
+        <p>📝 Words: {resumeData.words}</p>
+        <p>🔤 Characters: {resumeData.characters}</p>
+      </div>
+
+      <div className="mb-6 rounded-xl bg-green-50 p-4">
+  <h3 className="mb-3 text-lg font-bold">
+    Detected Skills
+  </h3>
+
+     <div className="flex flex-wrap gap-2">
+      {resumeData.skills.map((skill) => (
+        <span
+         key={skill}
+         className="rounded-full bg-green-100 px-3 py-1 text-sm"
+       >
+         ✅ {skill}
+        </span>
+       ))}
+       </div>
+      </div>
+
+       <div className="rounded-xl bg-gray-100 p-4">
+       <h3 className="mb-2 font-semibold">
+        Extracted Text
+       </h3>
+
+       <p className="whitespace-pre-wrap text-sm text-gray-700">
+        {resumeData.text}
+      </p>
+    </div>
+
+  </div>
+)}
         </div>
       )}
 
