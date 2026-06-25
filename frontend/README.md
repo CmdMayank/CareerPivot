@@ -1,28 +1,209 @@
-# React + Vite
+# Career Pivot 🚀
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+> **Know exactly what's standing between you and your dream role.**
 
-Currently, two official plugins are available:
+Career Pivot is an AI-powered career intelligence platform that helps students understand how close they are to their target job role. By analyzing a resume, it identifies existing skills, highlights missing ones, and generates a personalized roadmap to become job-ready.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+---
 
-## React Compiler
+## ✨ Features
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+### ✅ Completed
 
-## Expanding the ESLint configuration
+* Resume Upload
+* PDF Resume Parsing
+* Resume Text Extraction
+* Resume Statistics Dashboard
+* Basic Skill Detection Engine
+* FastAPI Backend
+* React + Vite Frontend
+* Frontend ↔ Backend Integration
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+### 🚧 In Progress
 
-#Current Progress---->
+* Target Role Selection
+* Match Score Calculation
+* Skill Gap Analysis
+* Resume Improvement Suggestions
+* Career Roadmap Generator
 
-- [x] Resume Upload Button Functionality
-- [x] PDF File Picker
-- [x] Frontend ↔ Backend Connection
-- [x] FastAPI Setup
-- [x] CORS Configuration
-- [x] PDF Resume Parsing
-- [x] Resume Text Extraction
-- [x] Resume Statistics Dashboard
-- [x] Basic Skill Detection Engine
+### 🔮 Planned
+
+* AI-Powered Resume Analysis (Groq)
+* Project Recommendations
+* Learning Resource Suggestions
+* Resume Report Export
+* User Authentication
+* Personal Dashboard
+
+---
+
+# 📸 Current Workflow
+
+```text
+Upload Resume
+      │
+      ▼
+Parse PDF
+      │
+      ▼
+Extract Resume Text
+      │
+      ▼
+Generate Statistics
+      │
+      ▼
+Detect Existing Skills
+      │
+      ▼
+(Upcoming)
+Match Score
+      │
+      ▼
+Career Roadmap
+```
+
+---
+
+# 🛠 Tech Stack
+
+## Frontend
+
+* React
+* Vite
+* Tailwind CSS
+
+## Backend
+
+* FastAPI
+* Python
+* PyPDF2
+
+## AI (Upcoming)
+
+* Groq API
+
+## Deployment
+
+* Vercel
+* Render / Railway
+
+---
+
+# 📂 Project Structure
+
+```bash
+CareerPivot
+│
+├── frontend
+│   ├── src
+│   │   ├── components
+│   │   ├── App.jsx
+│   │   └── main.jsx
+│   └── package.json
+│
+├── backend
+│   ├── main.py
+│   └── venv
+│
+└── README.md
+```
+
+---
+
+# 📊 Current Progress
+
+| Feature                | Status |
+| ---------------------- | ------ |
+| Landing Page           | ✅      |
+| Resume Upload          | ✅      |
+| PDF Parsing            | ✅      |
+| Resume Text Extraction | ✅      |
+| Resume Statistics      | ✅      |
+| Skill Detection        | ✅      |
+| Target Role Selection  | ⏳      |
+| Match Score            | ⏳      |
+| Skill Gap Analysis     | ⏳      |
+| AI Recommendations     | ⏳      |
+| Career Roadmap         | ⏳      |
+| Deployment             | ⏳      |
+
+---
+
+# ⚙️ Local Setup
+
+### Clone the repository
+
+```bash
+git clone https://github.com/CmdMayank/CareerPivot.git
+cd CareerPivot
+```
+
+### Frontend
+
+```bash
+cd frontend
+npm install
+npm run dev
+```
+
+### Backend
+
+```bash
+cd backend
+
+python3 -m venv venv
+source venv/bin/activate
+
+pip install -r requirements.txt
+
+uvicorn main:app --reload
+```
+
+---
+
+# 🎯 Vision
+
+Students often spend months learning random technologies without knowing whether they're becoming more employable.
+
+Career Pivot aims to eliminate that uncertainty by answering one simple question:
+
+> **"How close am I to my dream role, and what should I learn next?"**
+
+---
+
+# 🚀 Roadmap
+
+* Resume Parsing
+* Resume Statistics
+* Skill Detection
+* Role Selection
+* Match Score
+* Skill Gap Analysis
+* Resume Suggestions
+* AI Career Coach
+* Personalized Learning Roadmap
+* Exportable Career Report
+
+---
+
+# 🤝 Contributing
+
+Contributions, feature suggestions, and feedback are always welcome.
+
+1. Fork the repository
+2. Create a feature branch
+3. Commit your changes
+4. Open a Pull Request
+
+---
+
+# ⭐ Support
+
+If you like the project, consider giving it a ⭐ on GitHub.
+
+It helps others discover Career Pivot and motivates future development.
+
+---
+
+Built with ❤️ by **Mayank Sharma**
