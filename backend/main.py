@@ -36,6 +36,7 @@ async def upload_resume(
     file: UploadFile = File(...),
     target_role: str = Form(...)
 ):
+    reader = PdfReader(file.file)
 
     extracted_text = ""
 
