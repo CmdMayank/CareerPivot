@@ -1,6 +1,7 @@
 from fastapi import FastAPI, UploadFile, File
 from fastapi.middleware.cors import CORSMiddleware
 from PyPDF2 import PdfReader
+from roles import role_requirements
 
 app = FastAPI()
 
@@ -28,9 +29,13 @@ def test():
     return {"status": "Backend Connected Successfully"}
 
 
+from fastapi import Form
+
 @app.post("/upload")
-async def upload_resume(file: UploadFile = File(...)):
-    reader = PdfReader(file.file)
+async def upload_resume(
+    file: UploadFile = File(...),
+    target_role: str = Form(...)
+):
 
     extracted_text = ""
 
@@ -65,5 +70,6 @@ async def upload_resume(file: UploadFile = File(...)):
         "words": len(extracted_text.split()),
         "characters": len(extracted_text),
         "skills": detected_skills,
+        "target_role": target_role,
         "text": extracted_text[:1000]
     }

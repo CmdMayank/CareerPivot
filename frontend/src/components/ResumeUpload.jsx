@@ -17,7 +17,9 @@ function ResumeUpload() {
     setLoading(true);
 
     const formData = new FormData();
+
     formData.append("file", file);
+    formData.append("target_role", targetRole);
 
     try {
       const response = await fetch("http://127.0.0.1:8000/upload", {
