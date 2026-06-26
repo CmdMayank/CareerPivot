@@ -4,6 +4,7 @@ function ResumeUpload() {
   const [file, setFile] = useState(null);
   const [resumeData, setResumeData] = useState(null);
   const [loading, setLoading] = useState(false);
+  const [targetRole, setTargetRole] = useState("");
 
   const handleFileChange = (event) => {
     setFile(event.target.files[0]);
@@ -208,6 +209,58 @@ function ResumeUpload() {
               </div>
 
             </div>
+
+            {/* Target Role */}
+
+<div className="rounded-2xl bg-blue-50 p-6 shadow-sm">
+
+  <h3 className="mb-4 text-2xl font-bold">
+    🎯 Target Role
+  </h3>
+
+  <p className="mb-4 text-gray-600">
+    Choose the career you're aiming for.
+  </p>
+
+  <select
+    value={targetRole}
+    onChange={(e) => setTargetRole(e.target.value)}
+    className="w-full rounded-xl border border-gray-300 bg-white px-4 py-3 text-lg outline-none transition focus:border-black"
+  >
+    <option value="">Select a Target Role</option>
+
+    <option>Frontend Developer</option>
+
+    <option>Backend Developer</option>
+
+    <option>Full Stack Developer</option>
+
+    <option>AI Engineer</option>
+
+    <option>Machine Learning Engineer</option>
+
+    <option>Data Scientist</option>
+
+    <option>Android Developer</option>
+
+    <option>DevOps Engineer</option>
+
+    <option>Cloud Engineer</option>
+
+  </select>
+  {targetRole && (
+    <div className="mt-4 rounded-xl bg-white p-4">
+      <p className="text-sm text-gray-500">
+        Selected Career Goal
+      </p>
+
+      <h4 className="mt-1 text-xl font-bold">
+        🚀 {targetRole}
+      </h4>
+    </div>
+  )}
+
+</div>
 
             {/* Extracted Text */}
 
