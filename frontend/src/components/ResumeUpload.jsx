@@ -3,6 +3,7 @@ import { useState } from "react";
 function ResumeUpload() {
   const [file, setFile] = useState(null);
   const [resumeData, setResumeData] = useState(null);
+  const [loading, setLoading] = useState(false);
 
   const handleFileChange = (event) => {
     setFile(event.target.files[0]);
@@ -10,102 +11,228 @@ function ResumeUpload() {
   };
 
   const uploadResume = async () => {
-  if (!file) return;
+    if (!file) return;
 
-  const formData = new FormData();
-  formData.append("file", file);
+    setLoading(true);
 
-  try {
-    const response = await fetch("http://127.0.0.1:8000/upload", {
-      method: "POST",
-      body: formData,
-    });
+    const formData = new FormData();
+    formData.append("file", file);
 
-    const data = await response.json();
+    try {
+      const response = await fetch("http://127.0.0.1:8000/upload", {
+        method: "POST",
+        body: formData,
+      });
 
-    setResumeData(data);
-  } catch (error) {
-    console.error(error);
-    setResumeData({ text: "Upload failed" });
-  }
-};
+      const data = await response.json();
+      setResumeData(data);
+    } catch (error) {
+      console.error(error);
+
+      setResumeData({
+        text: "Upload failed. Please try again.",
+        skills: [],
+      });
+    } finally {
+      setLoading(false);
+    }
+  };
 
   return (
-  <section className="mx-auto max-w-3xl px-8 py-20">
-    <div className="rounded-3xl border border-gray-200 bg-white p-10 shadow-sm">
+    <section className="mx-auto max-w-5xl px-6 py-20">
+      <div className="rounded-3xl border border-gray-200 bg-white p-10 shadow-lg">
 
-      <h2 className="mb-8 text-4xl font-bold">
-        Upload Your Resume
-      </h2>
+        <h2 className="mb-3 text-5xl font-bold">
+          Upload Your Resume
+        </h2>
 
-      <input
-        type="file"
-        accept=".pdf"
-        onChange={handleFileChange}
-      />
+        <p className="mb-10 text-gray-500">
+          Upload a PDF resume and let Career Pivot analyze your skills.
+        </p>
 
-      {file && (
-        <div className="mt-6">
-          <p className="mb-4 text-lg">
-            Selected File: {file.name}
+        {/* Upload Area */}
+
+        <div className="rounded-2xl border-2 border-dashed border-gray-300 bg-gray-50 p-10 text-center transition hover:border-black hover:bg-gray-100">
+
+          <div className="mb-4 text-6xl">
+            📄
+          </div>
+
+          <h3 className="text-2xl font-semibold">
+            Choose Your Resume
+          </h3>
+
+          <p className="mt-2 text-gray-500">
+            Supported format: PDF
           </p>
 
+          <input
+            type="file"
+            accept=".pdf"
+            onChange={handleFileChange}
+            className="mx-auto mt-8 block"
+          />
+
+        </div>
+
+        {/* Selected File */}
+
+        {file && (
+          <div className="mt-8 rounded-2xl border border-green-200 bg-green-50 p-5">
+
+            <div className="flex items-center justify-between">
+
+              <div>
+
+                <p className="text-sm text-gray-500">
+                  Selected Resume
+                </p>
+
+                <p className="mt-1 font-semibold">
+                  📄 {file.name}
+                </p>
+
+              </div>
+
+              <span className="rounded-full bg-green-200 px-4 py-2 text-sm font-semibold text-green-800">
+                Ready
+              </span>
+
+            </div>
+
+          </div>
+        )}
+
+        {/* Analyze Button */}
+
+        {file && (
           <button
             type="button"
             onClick={uploadResume}
-            className="rounded-xl bg-black px-6 py-3 text-white"
+            disabled={loading}
+            className={`mt-8 w-full rounded-2xl py-4 text-lg font-semibold text-white transition-all duration-300 ${
+              loading
+                ? "cursor-not-allowed bg-gray-500"
+                : "bg-black hover:-translate-y-1 hover:bg-gray-900 hover:shadow-xl"
+            }`}
           >
-            Upload Resume
+            {loading ? "🚀 Analyzing Resume..." : "✨ Analyze Resume"}
           </button>
+        )}
 
-          {resumeData && (
-          <div className="mt-6">
+        {/* Loading */}
 
-          <div className="mb-6 rounded-xl bg-purple-50 p-4">
-          <h3 className="mb-3 text-lg font-bold">
-          Resume Statistics
-         </h3>
+        {loading && (
+          <div className="mt-8 rounded-2xl border border-blue-200 bg-blue-50 p-6">
 
-        <p>📄 Pages: {resumeData.pages}</p>
-        <p>📝 Words: {resumeData.words}</p>
-        <p>🔤 Characters: {resumeData.characters}</p>
+            <h3 className="mb-4 text-xl font-bold">
+              🚀 Analyzing Resume
+            </h3>
+
+            <div className="space-y-2 text-gray-700">
+
+              <p>📄 Parsing PDF...</p>
+              <p>📝 Extracting Resume Text...</p>
+              <p>🧠 Detecting Skills...</p>
+
+            </div>
+
+          </div>
+        )}
+
+        {/* Dashboard */}
+
+        {!loading && resumeData && (
+          <div className="mt-10 space-y-6">
+
+            {/* Statistics */}
+
+            <div className="rounded-2xl bg-purple-50 p-6 shadow-sm">
+
+              <h3 className="mb-5 text-2xl font-bold">
+                📊 Resume Statistics
+              </h3>
+
+              <div className="grid grid-cols-1 gap-4 md:grid-cols-3">
+
+                <div className="rounded-xl bg-white p-4 shadow">
+                  <p className="text-gray-500">Pages</p>
+                  <p className="text-3xl font-bold">
+                    {resumeData.pages ?? "-"}
+                  </p>
+                </div>
+
+                <div className="rounded-xl bg-white p-4 shadow">
+                  <p className="text-gray-500">Words</p>
+                  <p className="text-3xl font-bold">
+                    {resumeData.words ?? "-"}
+                  </p>
+                </div>
+
+                <div className="rounded-xl bg-white p-4 shadow">
+                  <p className="text-gray-500">Characters</p>
+                  <p className="text-3xl font-bold">
+                    {resumeData.characters ?? "-"}
+                  </p>
+                </div>
+
+              </div>
+
+            </div>
+
+            {/* Skills */}
+
+            <div className="rounded-2xl bg-green-50 p-6 shadow-sm">
+
+              <h3 className="mb-5 text-2xl font-bold">
+                🟢 Detected Skills
+              </h3>
+
+              <div className="flex flex-wrap gap-3">
+
+                {resumeData.skills?.length > 0 ? (
+                  resumeData.skills.map((skill) => (
+                    <span
+                      key={skill}
+                      className="rounded-full bg-green-200 px-5 py-2 font-medium transition hover:scale-105"
+                    >
+                      ✅ {skill}
+                    </span>
+                  ))
+                ) : (
+                  <p className="text-gray-500">
+                    No skills detected.
+                  </p>
+                )}
+
+              </div>
+
+            </div>
+
+            {/* Extracted Text */}
+
+            <div className="rounded-2xl bg-gray-100 p-6 shadow-sm">
+
+              <h3 className="mb-5 text-2xl font-bold">
+                📄 Extracted Text
+              </h3>
+
+              <div className="max-h-96 overflow-y-auto rounded-xl bg-white p-5">
+
+                <p className="whitespace-pre-wrap leading-7 text-gray-700">
+                  {resumeData.text}
+                </p>
+
+              </div>
+
+            </div>
+
+          </div>
+        )}
+
       </div>
-
-      <div className="mb-6 rounded-xl bg-green-50 p-4">
-  <h3 className="mb-3 text-lg font-bold">
-    Detected Skills
-  </h3>
-
-     <div className="flex flex-wrap gap-2">
-      {resumeData.skills.map((skill) => (
-        <span
-         key={skill}
-         className="rounded-full bg-green-100 px-3 py-1 text-sm"
-       >
-         ✅ {skill}
-        </span>
-       ))}
-       </div>
-      </div>
-
-       <div className="rounded-xl bg-gray-100 p-4">
-       <h3 className="mb-2 font-semibold">
-        Extracted Text
-       </h3>
-
-       <p className="whitespace-pre-wrap text-sm text-gray-700">
-        {resumeData.text}
-      </p>
-    </div>
-
-  </div>
-)}
-        </div>
-      )}
-
-    </div>
-  </section>
-);
+    </section>
+  );
 }
 
 export default ResumeUpload;
