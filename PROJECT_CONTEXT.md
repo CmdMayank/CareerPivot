@@ -2,200 +2,241 @@
 
 > **Stop guessing your career path. Start building it.**
 
-Career Pivot helps students understand **how close they are to their dream role** and provides a personalized roadmap to bridge the gap.
+Career Pivot is an AI-powered career intelligence platform that helps students understand how close they are to their dream role.
 
-Instead of learning random skills, building projects blindly, or endlessly consuming tutorials, students can upload their resume, choose a target role, and receive actionable insights on what to improve next.
-
----
-
-## ✨ Why Career Pivot?
-
-Students often struggle to answer a simple question:
-
-**"What should I learn next to achieve my dream role?"**
-
-Career Pivot transforms career uncertainty into a structured, data-driven action plan.
-
-### Common Challenges
-
-* ❓ Unsure which skills actually matter for their target role
-* 📚 Learning without a clear direction
-* 📄 Resumes that fail to communicate job readiness
-* 🛠️ Building projects that don't align with industry expectations
-* 🎯 No visibility into current career readiness
+Instead of learning random skills or following generic roadmaps, Career Pivot analyzes a student's resume, compares it against industry requirements, identifies skill gaps, and generates a personalized learning roadmap.
 
 ---
 
-## 💡 How It Works
+# ✨ Why Career Pivot?
+
+Most students ask questions like:
+
+* What should I learn next?
+* Am I ready for internships?
+* Which skills am I missing?
+* Is my resume good enough for my dream role?
+
+Career Pivot answers those questions using resume analysis and role-based skill matching.
+
+---
+
+# 💡 Current Workflow
 
 ```text
 Upload Resume
       ↓
+Extract Resume Text
+      ↓
+Detect Existing Skills
+      ↓
 Choose Target Role
       ↓
-Analyze Skills & Experience
+(Upcoming)
+Compare Against Industry Skills
       ↓
-Identify Gaps
+Generate Match Score
       ↓
-Generate Personalized Roadmap
+Identify Missing Skills
+      ↓
+Generate Learning Roadmap
 ```
 
 ---
 
-## 🎯 MVP Roadmap
+# 🚀 Current Features
 
-### Phase 1 — Foundation (In Progress)
+## Landing Page
 
-* [x] Landing Page
-* [x] Resume Upload UI
-* [x] FastAPI Backend Setup
-* [x] Frontend ↔ Backend Communication
-* [x] CORS Configuration
-* [ ] PDF Resume Parsing
-* [ ] Resume Text Extraction
-* [ ] Basic Dashboard
+* Modern responsive UI
+* Product overview
+* Career roadmap preview
+* Resume upload section
 
-### Phase 2 — Career Intelligence
+## Resume Analysis
 
-* [ ] Target Role Selection
-* [ ] Match Score Generation
-* [ ] Skill Gap Analysis
-* [ ] Resume Improvement Suggestions
-* [ ] Personalized Career Roadmap
+* PDF Resume Upload
+* PDF Text Extraction
+* Resume Statistics
 
-### Phase 3 — AI Enhancement
+  * Total Pages
+  * Total Words
+  * Total Characters
+* Skill Detection Engine
+* Resume Preview
 
-* [ ] AI-Powered Insights
-* [ ] Project Recommendations
-* [ ] Learning Resource Recommendations
-* [ ] Exportable Career Reports
+## Career Planning
+
+* Target Role Selection
+* Career Goal Dashboard
 
 ---
 
-## 🛠️ Tech Stack
+# 🎯 Upcoming Features
 
-### Frontend
+## Career Intelligence Engine
+
+* Match Score
+* Missing Skills Detection
+* Existing Skills Analysis
+* Resume Improvement Suggestions
+
+## AI Features
+
+* AI Career Advisor (Groq)
+* Personalized Learning Roadmap
+* Project Recommendations
+* Course Recommendations
+
+## Platform
+
+* Authentication
+* Saved Reports
+* User Dashboard
+* Resume History
+* Export Career Report
+
+---
+
+# 🛠 Tech Stack
+
+## Frontend
 
 * React
 * Vite
 * Tailwind CSS v4
 
-### Backend
+## Backend
 
 * FastAPI
 * Python
+* PyPDF2
 
-### AI
+## AI
 
 * Groq API *(planned)*
 
-### Deployment
+## Deployment
 
-* Vercel (Frontend)
-* Render / Railway (Backend)
-
----
-
-## 📂 Project Structure
-
-```bash
-CareerPivot/
-│
-├── frontend/
-│   ├── src/
-│   │   ├── components/
-│   │   │   ├── Navbar.jsx
-│   │   │   ├── Hero.jsx
-│   │   │   ├── ProblemCards.jsx
-│   │   │   ├── HowItWorks.jsx
-│   │   │   ├── ReportPreview.jsx
-│   │   │   ├── RoadmapSection.jsx
-│   │   │   ├── ResumeUpload.jsx
-│   │   │   └── Footer.jsx
-│   │   ├── App.jsx
-│   │   ├── main.jsx
-│   │   └── index.css
-│   │
-│   └── package.json
-│
-├── backend/
-│   ├── venv/
-│   └── main.py
-│
-└── README.md
-```
+* Vercel
+* Render
 
 ---
 
-## ✅ Current Progress
-
-* [x] GitHub Repository Created
-* [x] React + Vite Setup
-* [x] Tailwind CSS v4 Setup
-* [x] Component Architecture
-* [x] Landing Page (V1)
-* [x] Resume Upload UI
-* [x] PDF File Picker
-* [x] FastAPI Setup
-* [x] Frontend ↔ Backend Connection
-* [x] CORS Configuration
-
-
----
-
-## 🚧 Current Milestone
-
-Building the first end-to-end workflow:
+# 📂 Project Structure
 
 ```text
-Select Resume
-      ↓
-Upload PDF
-      ↓
-Send to FastAPI
-      ↓
-Extract Resume Text
-      ↓
-Display Results
+CareerPivot/
+
+frontend/
+│
+├── src/
+│   ├── components/
+│   │
+│   ├── Navbar.jsx
+│   ├── Hero.jsx
+│   ├── ResumeUpload.jsx
+│   ├── ProblemCards.jsx
+│   ├── HowItWorks.jsx
+│   ├── ReportPreview.jsx
+│   ├── RoadmapSection.jsx
+│   └── Footer.jsx
+│
+├── App.jsx
+├── main.jsx
+└── index.css
+
+
+backend/
+│
+├── main.py
+├── roles.py
+└── venv/
+
+
+README.md
 ```
 
-**Current focus:** Build a reliable product pipeline before introducing AI features.
+---
+
+# ✅ Current Progress
+
+### Product Foundation
+
+* [x] React + Vite Setup
+* [x] Tailwind CSS v4
+* [x] Responsive Landing Page
+* [x] Component Architecture
+
+### Backend
+
+* [x] FastAPI Setup
+* [x] CORS Configuration
+* [x] Resume Upload API
+* [x] PDF Parsing
+* [x] Resume Text Extraction
+
+### Resume Dashboard
+
+* [x] Resume Statistics
+* [x] Skill Detection
+* [x] Resume Preview
+* [x] Loading State
+* [x] Improved Upload Experience
+
+### Career Intelligence
+
+* [x] Target Role Selection
+* [ ] Match Score Engine
+* [ ] Missing Skills Detection
+* [ ] Career Readiness Score
+* [ ] Learning Roadmap
 
 ---
 
-## 🧠 Development Philosophy
+# 🎯 Current Milestone
 
-* Build real features before polishing the UI endlessly
-* Learn by building products, not tutorials
-* Keep commits small and meaningful
-* Ship working versions quickly
-* Prioritize functionality over visual perfection
+Building Career Pivot's first intelligence engine.
+
+Current pipeline:
+
+```text
+Resume
+      ↓
+Text Extraction
+      ↓
+Skill Detection
+      ↓
+Target Role
+      ↓
+Skill Comparison
+      ↓
+Career Match Score
+```
 
 ---
 
-## 🗺️ Product Roadmap
+# 🧠 Development Philosophy
 
-* [ ] Resume Parsing Engine
-* [ ] Target Role Recommendation System
-* [ ] Skill Gap Analysis
-* [ ] AI-Generated Career Roadmap
-* [ ] Exportable Reports
-* [ ] Authentication
-* [ ] User Dashboard
-* [ ] Deployment
+* Build products, not tutorial clones.
+* Prioritize functionality before AI.
+* Ship small, meaningful improvements.
+* Keep commits focused and descriptive.
+* Learn through real-world engineering.
 
 ---
 
-## ⚙️ Local Setup
+# ⚙ Local Setup
 
-### Clone the Repository
+## Clone
 
 ```bash
 git clone https://github.com/CmdMayank/CareerPivot.git
+
 cd CareerPivot
 ```
 
-### Frontend Setup
+## Frontend
 
 ```bash
 cd frontend
@@ -204,39 +245,58 @@ npm install
 npm run dev
 ```
 
-### Backend Setup
+## Backend
 
 ```bash
 cd backend
 
 python3 -m venv venv
+
 source venv/bin/activate
 
-pip install fastapi uvicorn python-multipart
+pip install fastapi uvicorn python-multipart PyPDF2
 
 uvicorn main:app --reload
 ```
 
 ---
 
-## 🤝 Contributing
+# 🗺 Roadmap
 
-Suggestions, feedback, and ideas are always welcome.
+## Version 0.1
 
-To contribute:
+* Resume Upload
+* Resume Parsing
+* Skill Detection
+* Target Role Selection
 
-1. Fork the repository
-2. Create a feature branch
-3. Commit your changes
-4. Open a pull request
+## Version 0.2
+
+* Match Score
+* Missing Skills
+* Career Readiness Dashboard
+
+## Version 1.0
+
+* AI Career Advisor
+* Personalized Roadmap
+* Resume Suggestions
+* Learning Resources
+* Export Career Report
 
 ---
 
-## ⭐ Support
+# 🤝 Contributing
 
-If you find this project interesting, consider giving it a star.
+Contributions, suggestions and feature ideas are always welcome.
 
-Your support motivates future development and helps others discover Career Pivot.
+---
+
+# ⭐ Support
+
+If you found Career Pivot useful or interesting, consider giving the repository a ⭐.
+
+It helps more students discover the project and motivates future development.
 
 ---
 
