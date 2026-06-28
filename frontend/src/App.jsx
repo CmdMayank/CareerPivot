@@ -6,6 +6,7 @@ import ReportPreview from "./components/ReportPreview";
 import RoadmapSection from "./components/RoadmapSection";
 import Footer from "./components/Footer";
 import ResumeUpload from "./components/ResumeUpload";
+import CareerPaths from "./components/CareerPaths";
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
       <ResumeUpload />
       <ProblemCards />
       <HowItWorks />
+      <CareerPaths />
       <ReportPreview />
       <RoadmapSection />
       <Footer />
