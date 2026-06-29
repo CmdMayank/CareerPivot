@@ -300,4 +300,4 @@ It helps more students discover the project and motivates future development.
 
 ---
 
-Built with ❤️ by **Mayank Sharma**
+
