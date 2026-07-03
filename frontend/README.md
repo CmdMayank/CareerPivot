@@ -207,6 +207,5 @@ It helps others discover Career Pivot and motivates future development.
 ---
 ## 📄 License
 
-This project is licensed under the MIT License.
 
 Built with ❤️ by **Mayank Sharma**
