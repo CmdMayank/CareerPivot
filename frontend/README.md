@@ -168,7 +168,7 @@ Students often spend months learning random technologies without knowing whether
 
 Career Pivot aims to eliminate that uncertainty by answering one simple question:
 
-> **"How close am I to my dream role, and what should I learn next?"**
+
 
 ---
 
