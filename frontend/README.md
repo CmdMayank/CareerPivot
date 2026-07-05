@@ -208,4 +208,3 @@ It helps others discover Career Pivot and motivates future development.
 ## 📄 License
 
 
-Built with ❤️ by **Mayank Sharma**
