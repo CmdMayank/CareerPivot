@@ -65,12 +65,4 @@ async def upload_resume(
         if skill.lower() in extracted_text.lower():
             detected_skills.append(skill)
 
-    return {
-        "filename": file.filename,
-        "pages": len(reader.pages),
-        "words": len(extracted_text.split()),
-        "characters": len(extracted_text),
-        "skills": detected_skills,
-        "target_role": target_role,
-        "text": extracted_text[:1000]
-    }
+    
