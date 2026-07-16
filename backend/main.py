@@ -73,4 +73,4 @@ async def upload_resume(
         "skills": detected_skills,
         "target_role": target_role,
         "text": extracted_text[:1000]
-    }
+    } 
