@@ -66,7 +66,7 @@ function Navbar() {
 
         <button className="rounded-xl bg-gradient-to-r from-indigo-600 to-purple-600 px-6 py-3 font-semibold text-white shadow-lg transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
 
-          
+          Analyze Resume
 
         </button>
 
