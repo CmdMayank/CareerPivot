@@ -45,14 +45,7 @@ role_requirements = {
         "NumPy"
     ],
 
-    "Data Scientist": [
-        "Python",
-        "Pandas",
-        "NumPy",
-        "SQL",
-        "Machine Learning",
-        "Matplotlib"
-    ],
+    
 
     "Android Developer": [
         "Java",
