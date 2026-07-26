@@ -163,6 +163,7 @@ README.md
 
 # ✅ Current Progress
 
+
 ### Product Foundation
 
 * [x] React + Vite Setup
