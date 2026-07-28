@@ -59,7 +59,6 @@ async def upload_resume(
         "Machine Learning"
     ]
 
-
     detected_skills = []
 
     for skill in skills_db:
