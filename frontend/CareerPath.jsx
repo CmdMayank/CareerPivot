@@ -7,6 +7,7 @@ const careers = [
   {
     icon: "⚙️",
     title: "Backend Developer",
+    
     desc: "Design scalable APIs and servers."
   },
   {
