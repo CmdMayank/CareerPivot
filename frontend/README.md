@@ -197,7 +197,6 @@ Contributions, feature suggestions, and feedback are always welcome.
 4. Open a Pull Request
 
 ---
-
 # ⭐ Support
 
 If you like the project, consider giving it a ⭐ on GitHub.
