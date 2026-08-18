@@ -64,7 +64,6 @@ async def upload_resume(
     for skill in skills_db:
         if skill.lower() in extracted_text.lower():
             detected_skills.append(skill)
-            
 
     return {
         "filename": file.filename,
