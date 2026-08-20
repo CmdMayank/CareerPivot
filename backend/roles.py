@@ -45,6 +45,7 @@ role_requirements = {
         "NumPy"
     ],
 
+
     "Data Scientist": [
         "Python",
         "Pandas",
