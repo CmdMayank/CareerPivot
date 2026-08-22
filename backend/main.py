@@ -58,10 +58,7 @@ async def upload_resume(
         "FastAPI",
         "Machine Learning"
     ]
-
-
-
-
+    
     detected_skills = []
 
     for skill in skills_db:
