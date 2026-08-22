@@ -60,6 +60,8 @@ async def upload_resume(
     ]
 
 
+
+
     detected_skills = []
 
     for skill in skills_db:
