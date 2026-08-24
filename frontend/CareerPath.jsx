@@ -60,8 +60,6 @@ function CareerPaths() {
 
         </div>
 
-
-
         <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
 
           {careers.map((career) => (
