@@ -93,5 +93,4 @@ function CareerPaths() {
   );
 }
 
-
 export default CareerPaths;
