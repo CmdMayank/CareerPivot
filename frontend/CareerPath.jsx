@@ -69,7 +69,6 @@ function CareerPaths() {
               className="group rounded-3xl border border-gray-200 bg-white p-8 shadow-sm transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl"
             >
 
-
               <div className="mb-6 text-5xl transition group-hover:scale-110">
                 {career.icon}
               </div>
@@ -93,6 +92,5 @@ function CareerPaths() {
     </section>
   );
 }
-
 
 export default CareerPaths;
