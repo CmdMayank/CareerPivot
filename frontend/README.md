@@ -188,7 +188,6 @@ Career Pivot aims to eliminate that uncertainty by answering one simple question
 ---
 
 # 🤝 Contributing
-
 Contributions, feature suggestions, and feedback are always welcome.
 
 1. Fork the repository
