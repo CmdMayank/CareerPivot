@@ -36,8 +36,6 @@ role_requirements = {
         "Git"
     ],
 
-
-
     "Machine Learning Engineer": [
         "Python",
         "Machine Learning",
