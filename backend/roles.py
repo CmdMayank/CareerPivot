@@ -54,8 +54,6 @@ role_requirements = {
         "Matplotlib"
     ],
 
-
-
     "Android Developer": [
         "Java",
         "Kotlin",
