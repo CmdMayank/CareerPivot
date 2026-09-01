@@ -29,6 +29,8 @@ const careers = [
     title: "Android Developer",
     desc: "Develop mobile applications."
   },
+
+  
   {
     icon: "☁️",
     title: "Cloud Engineer",
