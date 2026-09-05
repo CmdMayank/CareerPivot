@@ -41,7 +41,6 @@ function ResumeUpload() {
     }
   };
 
-  
   return (
     <section className="mx-auto max-w-5xl px-6 py-20">
       <div className="rounded-3xl border border-gray-200 bg-white p-10 shadow-lg">
