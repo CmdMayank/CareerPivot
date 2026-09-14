@@ -66,5 +66,4 @@ function ReportPreview() {
   );
 }
 
-
 export default ReportPreview;
