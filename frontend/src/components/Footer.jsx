@@ -17,6 +17,7 @@ function Footer() {
         </div>
       </div>
 
+
       <div className="mt-8 text-center text-sm text-gray-400">
         © 2026 Career Pivot. Built by Mayank.
       </div>
