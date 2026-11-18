@@ -88,7 +88,6 @@ function CareerPaths() {
         </div>
 
       </div>
-      
 
     </section>
   );
